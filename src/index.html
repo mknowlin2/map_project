@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <!-- META tags -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+  </head>
+  <body>
+    <div>
+      <div>
+        <p>Filter: <input id="filter"
+                          data-bind="value: filter, valueUpdate: 'afterkeydown', event: {keyup: filterMarkers}" /></p>
+      </div>
+    </div>
+    <div>
+      <ul data-bind="foreach: filteredLocations">
+        <li>
+          <a href="#" data-bind="text: title, click: showMarker"></a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div id="map"></div>
+    </div>
+
+    <script type="text/javascript" src="static/js/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="static/js/popper/popper.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/knockout/knockout-3.4.2.js"></script>
+    <script type='text/javascript' src='static/js/locations.js'></script>
+    <script type='text/javascript' src='static/js/map.js'></script>
+    <script type='text/javascript' src='static/js/map_knockout.js'></script>
+    <script>
+      // Activates knockout.js
+      ko.applyBindings(new AppViewModel());
+    </script>
+    <script async defer
+        src=
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCMfPkhQmndWDZ61scRZGG9GYJxVAzc5GQ&libraries=places,geometry&v=3&callback=initMap">
+    </script>
+  </body>
+</html>
