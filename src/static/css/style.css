@@ -3,21 +3,13 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #f1f1f1;
 }
 
-#map {
- height: 400px;
- width: 100%;
-}
-
-/*input {
-  font-size: 12px;
-}
-
-h1 {
+header {
   color: #525454;
-  font-size: 22px;
-  margin: 0 0 10px 0;
+  font-size: 20px;
+  margin: 5px 0 5px 0;
   text-align: center;
 }
 
@@ -26,194 +18,15 @@ hr {
   height: 1px;
   margin: 20px 0 20px 0;
   border: none;
-}*/
-
-/* Add a gray background color and some padding to the footer */
-/*footer {
-  background-color: #f2f2f2;
-  padding: 25px;
-}*/
-
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-/*.row.content {height: 550px}*/
-
-/* Set gray background color and 100% height */
-/*.sidenav {
-  background-color: #f1f1f1;
-  height: 100%;
-}
-
-.container {
-  height: 100%;
-  position: relative;
-}
-
-.text {
-  font-size: 12px;
-}*/
-
-/* On small screens, set height to 'auto' for the grid */
-/*@media screen and (max-width: 767px) {
-  .row.content {height: auto;}
-}
-
-#hide-listings, #show-listings {
-  width: 48%;
 }
 
 #map {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: rgb(229, 227, 223);
-  overflow: hidden;
+ height: 325px;
+ width: 100%;
 }
 
-#pano {
-  width: 200px;
-  height: 200px;
+#location-container {
+  width: 75%;
+  text-align: center;
+  margin: auto;
 }
-
-#toggle-drawing {
-  width: 27%;
-  position: relative;
-  margin-left: 10px;
-}
-
-#zoom-to-area-text {
-  position: relative;
-  width: 70%;
-}
-
-#zoom-to-area {
-  width: 24%;
-}
-
-#search-within-time-text {
-  width: 84%;
-}
-
-#sidebar {
-    overflow: hidden;
-    z-index: 3;
-}
-#sidebar .list-group {
-    min-width: 400px;
-    background-color: #333;
-    min-height: 100vh;
-}
-#sidebar i {
-    margin-right: 6px;
-}
-
-#sidebar .list-group-item {
-    border-radius: 0;
-    background-color: #333;
-    color: #ccc;
-    border-left: 0;
-    border-right: 0;
-    border-color: #2c2c2c;
-    white-space: nowrap;
-} */
-
-/* highlight active menu */
-/*#sidebar .list-group-item:not(.collapsed) {
-    background-color: #222;
-}*/
-
-/* closed state */
-/*#sidebar .list-group .list-group-item[aria-expanded="false"]::after {
-  content: " \f0d7";
-  font-family: FontAwesome;
-  display: inline;
-  text-align: right;
-  padding-left: 5px;
-}*/
-
-/* open state */
-/*#sidebar .list-group .list-group-item[aria-expanded="true"] {
-  background-color: #222;
-}
-#sidebar .list-group .list-group-item[aria-expanded="true"]::after {
-  content: " \f0da";
-  font-family: FontAwesome;
-  display: inline;
-  text-align: right;
-  padding-left: 5px;
-}*/
-
-/* level 1*/
-/*#sidebar .list-group .collapse .list-group-item,
-#sidebar .list-group .collapsing .list-group-item  {
-  padding-left: 20px;
-}*/
-
-/* level 2*/
-/*#sidebar .list-group .collapse > .collapse .list-group-item,
-#sidebar .list-group .collapse > .collapsing .list-group-item {
-  padding-left: 30px;
-}*/
-
-/* level 3*/
-/*#sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
-  padding-left: 40px;
-}
-
-@media (max-width:768px) {
-    #sidebar {
-        min-width: 35px;
-        max-width: 40px;
-        overflow-y: auto;
-        overflow-x: visible;
-        transition: all 0.25s ease;
-        transform: translateX(-45px);
-        position: fixed;
-    }
-
-    #sidebar.show {
-        transform: translateX(0);
-    }
-
-    #sidebar::-webkit-scrollbar{ width: 0px; }
-
-    #sidebar, #sidebar .list-group {
-        min-width: 35px;
-        overflow: visible;
-    }*/
-    /* overlay sub levels on small screens */
-  /*  #sidebar .list-group .collapse.show, #sidebar .list-group .collapsing {
-        position: relative;
-        z-index: 1;
-        width: 190px;
-        top: 0;
-    }
-    #sidebar .list-group > .list-group-item {
-        text-align: center;
-        padding: .75rem .5rem;
-    }*/
-    /* hide caret icons of top level when collapsed */
-    /*#sidebar .list-group > .list-group-item[aria-expanded="true"]::after,
-    #sidebar .list-group > .list-group-item[aria-expanded="false"]::after {
-        display:none;
-    }
-}
-
-.collapse.show {
-  visibility: visible;
-}
-.collapsing {
-  visibility: visible;
-  height: 0;
-  -webkit-transition-property: height, visibility;
-  transition-property: height, visibility;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.collapsing.width {
-  -webkit-transition-property: width, visibility;
-  transition-property: width, visibility;
-  width: 0;
-  height: 100%;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}*/

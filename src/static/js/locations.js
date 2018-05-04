@@ -3,6 +3,7 @@ var foursquare_client_id = "H4G45SFPNZNFHOY33IGFMWOT0C5DONIZBJPCJCLVKIDXQ0P1";
 var foursquare_client_secret = "H244FFMKQKHSFI0BT4FZ3NLDZ3ZIX35UZIG4WKL01GS11FRS";
 var urlBase = "https://api.foursquare.com/v2/venues/search?";
 
+
 // Initial marker location array
 var locations = [
   new MarkLocation("Jungle Jim's", {lat: 39.335078, lng: -84.5242466}),
@@ -21,6 +22,12 @@ function MarkLocation(title, location) {
   self.latLng = location;
 
   self.showMarker = function() {
+    // Toggle style active on location list items
+    $('#locations a').click(function () {
+      $('#locations a').not(this).removeClass('active');
+      $(this).addClass('active');
+    });
+
     showMarker(title);
   };
 

@@ -35,10 +35,10 @@ function showMarker(title) {
     if(markers[i].title == title) {
       markers[i].setMap(map);
       google.maps.event.trigger(markers[i], 'click');
-      toggleBounce(marker);
+      toggleBounce(markers[i]);
     }
   }
-  map.fitBounds(bounds);
+  //map.fitBounds(bounds);
 }
 
 // This function hides markers which do not match filter
