@@ -15,7 +15,12 @@ var locations = [
   new MarkLocation("Starbucks", {lat: 39.323212, lng: -84.429819})
 ];
 
-// Class to represent a row in the location object
+/**
+* @description Represents a location
+* @constructor
+* @param {string} title - The location title
+* @param {array} location - An array contain latitude and longitude
+*/
 function MarkLocation(title, location) {
   var self = this;
   self.title = title;

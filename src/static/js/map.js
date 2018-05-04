@@ -1,10 +1,15 @@
+// Create a map object for Google map.
 var map;
 // Create a new blank array for all the listing markers.
 var markers = [];
 
-// This function takes in a COLOR, and then creates a new marker
-// icon of that color. The icon will be 21 px wide by 34 high, have an origin
-// of 0, 0 and be anchored at 10, 34).
+/**
+* @description This function takes in a COLOR, and then creates a new marker
+*              icon of that color. The icon will be 21 px wide by 34 high,
+*              have an origin of 0, 0 and be anchored at 10, 34).
+* @param {string} markerColor
+* @returns {google.maps.MarkerImage} markerImage
+*/
 function makeMarkerIcon(markerColor) {
   var markerImage = new google.maps.MarkerImage(
     'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
@@ -16,6 +21,10 @@ function makeMarkerIcon(markerColor) {
   return markerImage;
 }
 
+/**
+* @description This function toggles the google.maps.Animation.BOUNCE.
+* @param {google.maps.Marker} marker
+*/
 function toggleBounce(marker) {
     for (var i = 0; i < markers.length; i++) {
       if(markers[i] == marker) {
@@ -26,7 +35,10 @@ function toggleBounce(marker) {
     }
 }
 
-// This function will show the selected marker based on title
+/**
+* @description This function will show the selected marker based on title.
+* @param {string} title
+*/
 function showMarker(title) {
   var bounds = new google.maps.LatLngBounds();
 
@@ -38,11 +50,12 @@ function showMarker(title) {
       toggleBounce(markers[i]);
     }
   }
-  //map.fitBounds(bounds);
 }
 
-// This function hides markers which do not match filter
-// when filter changes
+/**
+* @description This function hides markers which do not match filter when
+*              filter changes
+*/
 function filterMarkers() {
   var bounds = new google.maps.LatLngBounds();
   var filter = $('#filter')[0].value;
@@ -59,9 +72,13 @@ function filterMarkers() {
   }
 }
 
-// This function populates the infowindow when the marker is clicked.
-// We'll only allow one infowindow which will open at the marker that
-// is clicked, and populate based on that markers position.
+/**
+* @description This function populates the infowindow with a list of names
+*              from the venuesNames array when the marker is clicked.
+* @param {google.maps.Marker} marker
+* @param {google.maps.InfoWindow} infowindow
+* @param {array} venueNames
+*/
 function populateInfoWindow(marker, infowindow, venueNames) {
 
   toggleBounce(marker);
@@ -92,6 +109,9 @@ function populateInfoWindow(marker, infowindow, venueNames) {
   }
 }
 
+/**
+* @description Init Google map 
+*/
 function initMap() {
   // Style the markers a bit. This will be our listing marker icon.
   var defaultIcon = makeMarkerIcon('0091ff');
