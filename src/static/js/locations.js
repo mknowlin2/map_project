@@ -25,17 +25,35 @@ function MarkLocation(title, location) {
   var self = this;
   self.title = title;
   self.latLng = location;
+  self.isActive = false;
 
+  /**
+  * @description This function calls toggleActive and showMarker functions.
+  */
   self.showMarker = function() {
-    // Toggle style active on location list items
-    $('#locations a').click(function () {
-      $('#locations a').not(this).removeClass('active');
-      $(this).addClass('active');
-    });
-
+    self.toggleActive(self);
     showMarker(title);
   };
 
+  /**
+  * @description This function toggles the active class on listed locations
+  * @param {MarkLocation} location
+  */
+  self.toggleActive = function(location){
+    locations.forEach(function(locationB) {
+      if(location == locationB) {
+        locationB.isActive(true);
+      } else {
+        locationB.isActive(false);
+      }
+    });
+  };
+
+  /**
+  * @description This function calls foursquare to retrieve 5 coffee shop
+  *              locations.
+  * @return {array} venueNames
+  */
   self.findCoffee = function() {
     var venueNames = [];
     // Build URL for foursquare request
@@ -61,5 +79,5 @@ function MarkLocation(title, location) {
     });
 
     return venueNames;
-  }
+  };
 }

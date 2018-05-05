@@ -58,10 +58,10 @@ function showMarker(title) {
 */
 function filterMarkers() {
   var bounds = new google.maps.LatLngBounds();
-  var filter = $('#filter')[0].value;
+  var filter = this.filter;
 
   for (var i = 0; i < markers.length; i++) {
-    if(markers[i].title.toLowerCase().indexOf(filter.toLowerCase()) > -1) {
+    if(markers[i].title.toLowerCase().indexOf(filter().toLowerCase()) > -1) {
       markers[i].setMap(map);
       markers[i].setAnimation(google.maps.Animation.DROP);
       bounds.extend(markers[i].position);
@@ -110,7 +110,7 @@ function populateInfoWindow(marker, infowindow, venueNames) {
 }
 
 /**
-* @description Init Google map 
+* @description Init Google map
 */
 function initMap() {
   // Style the markers a bit. This will be our listing marker icon.
@@ -159,4 +159,14 @@ function initMap() {
       };
     })(venueNames));
   }
+}
+
+/**
+* @description Alert user there is a Google map error
+*/
+function googleError() {
+  console.log("Google Map API Error");
+  var message = 'The Google Map API could not load the map.';
+
+  alert(message);
 }

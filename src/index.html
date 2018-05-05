@@ -37,27 +37,25 @@
           </div>
           <div  id="locations" class="list-group" data-bind="foreach: filteredLocations">
             <a href="#" class="list-group-item list-group-item-action"
-               data-bind="text: title, click: showMarker"></a>
+               data-bind="text: title, click: showMarker, css : {'active' : isActive}"></a>
           </div>
         </div>
       </div>
     </div>
-
-
-    <script type="text/javascript" src="static/js/jquery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="static/js/popper/popper.min.js"></script>
-    <script type="text/javascript" src="static/js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/js/knockout/knockout-3.4.2.js"></script>
-    <script type='text/javascript' src='static/js/locations.js'></script>
-    <script type='text/javascript' src='static/js/map.js'></script>
-    <script type='text/javascript' src='static/js/map_knockout.js'></script>
+    <script src="static/js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="static/js/popper/popper.min.js"></script>
+    <script src="static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="static/js/knockout/knockout-3.4.2.js"></script>
+    <script src='static/js/locations.js'></script>
+    <script src='static/js/map.js'></script>
+    <script src='static/js/map_knockout.js'></script>
     <script>
       // Activates knockout.js
       ko.applyBindings(new AppViewModel());
     </script>
     <script async defer
         src=
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCMfPkhQmndWDZ61scRZGG9GYJxVAzc5GQ&libraries=places,geometry&v=3&callback=initMap">
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCMfPkhQmndWDZ61scRZGG9GYJxVAzc5GQ&libraries=places,geometry&v=3&callback=initMap" onerror="googleError()">
     </script>
   </body>
 </html>
